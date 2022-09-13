@@ -1,0 +1,32 @@
+{
+  "groups": [
+    {
+      "name": "tools.ip",
+      "type": "com.sqn.ipspringbootstarter.properties.IpCountProperties",
+      "sourceType": "com.sqn.ipspringbootstarter.properties.IpCountProperties"
+    }
+  ],
+  "properties": [
+    {
+      "name": "tools.ip.cycle-reset",
+      "type": "java.lang.Boolean",
+      "description": "是否周期内重置",
+      "sourceType": "com.sqn.ipspringbootstarter.properties.IpCountProperties",
+      "defaultValue": false
+    },
+    {
+      "name": "tools.ip.log-cycle",
+      "type": "java.lang.Integer",
+      "description": "日志打印周期",
+      "sourceType": "com.sqn.ipspringbootstarter.properties.IpCountProperties",
+      "defaultValue": 5
+    },
+    {
+      "name": "tools.ip.model",
+      "type": "java.lang.String",
+      "description": "日志模式 detail:详细模式 simple:极简模式",
+      "sourceType": "com.sqn.ipspringbootstarter.properties.IpCountProperties"
+    }
+  ],
+  "hints": []
+}
