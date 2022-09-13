@@ -21,17 +21,18 @@ public class IpCountService {
 
     }
 
-    @Scheduled(cron = "0/5 * * * * ?")
+    //使用#{beanName.attrName}获取bean属性
+    @Scheduled(cron = "0/#{ipCountProperties.logCycle} * * * * ?")
     public void print() {
         if (ipCountProperties.getModel().equals(IpCountProperties.LogModel.DETAIL.getValue())) {
-            System.out.println("                ip访问监控              ");
+            System.out.println("            ip访问监控           ");
             System.out.println("+-----ip-address-----+---num---+");
             for (Map.Entry<String, Integer> entry : map.entrySet()) {
                 System.out.printf("|%18s  |%5d    |%n", entry.getKey(), entry.getValue());
             }
             System.out.println("+-----ip-address-----+---num---+");
         } else if (ipCountProperties.getModel().equals(IpCountProperties.LogModel.SIMPLE.getValue())) {
-            System.out.println("           ip访问监控         ");
+            System.out.println("        ip访问监控     ");
             System.out.println("+-----ip-address-----+");
             for (String value : map.keySet()) {
                 System.out.printf("|%18s  |%n", value);
